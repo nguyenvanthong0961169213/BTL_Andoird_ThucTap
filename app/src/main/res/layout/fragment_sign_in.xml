@@ -4,7 +4,7 @@
     <data>
        <variable
            name="Login_viewmodel"
-           type="com.example.btl_android_thuctap.ViewModel.Login_viewmodel" />
+           type="com.example.btl_android_thuctap.view_model.Login_viewmodel" />
     </data>
 <FrameLayout
     android:layout_width="match_parent"
@@ -113,7 +113,8 @@
                android:background="@drawable/edit_text_login"
                android:hint="@string/string_hint_phone"
                android:inputType="phone"
-               android:padding="10dp"/>
+               android:padding="10dp"
+               android:text="@={Login_viewmodel.phoneNumber}"/>
 <!--               android:text="@={login_viewmodel.phoneNumber}" />-->
 
            <TextView
@@ -136,7 +137,8 @@
                android:background="@drawable/edit_text_login"
                android:hint="********"
                android:inputType="textPassword"
-               android:padding="10dp"/>
+               android:padding="10dp"
+               android:text="@={Login_viewmodel.password}"/>
 <!--               android:text="@={login_viewmodel.password}" -->
 
 
@@ -153,7 +155,8 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_gravity="center"
-               android:textSize="20dp"/>
+               android:textSize="20dp"
+               android:text="@={Login_viewmodel.validate}"/>
 <!--               android:text="@={login_viewmodel.validate}"/>-->
 
            <Button
@@ -162,10 +165,10 @@
                android:layout_gravity="center"
                android:layout_marginTop="15dp"
                android:background="@drawable/btn_signin"
-
                android:text="@string/string_btn_signin"
                android:textColor="@color/white"
-               android:textSize="18dp" />
+               android:textSize="18dp"
+               android:onClick="@{() -> Login_viewmodel.Onclick()}"/>
            <!--android:onClick="@{()->login_viewmodel.Onclick()}"-->
 
        </LinearLayout>
